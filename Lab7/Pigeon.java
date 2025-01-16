@@ -1,7 +1,7 @@
 package Lab7;
 
 public class Pigeon extends Bird {
-    private int numberOfPigeon;
+    private static int numberOfPigeon;
     
     public Pigeon (double wingSize, double weight, double height) {
         super(wingSize, weight, height);
@@ -10,7 +10,6 @@ public class Pigeon extends Bird {
     
     public Pigeon() {
         this(0.0, 0.0, 0.0);
-        numberOfPigeon += 1;
     }
     
     public void eat(String food) {

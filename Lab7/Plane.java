@@ -2,9 +2,9 @@ package Lab7;
 
 public class Plane extends Vehicle implements Flyable {
     
-    public String airline;
-    public String boeing;
-    public static final int MAX_FLYER = 2;
+    private String airline;
+    private String boeing;
+    private static final int MAX_FLYER = 2;
     
     public Plane() {
         this(0.0, "", "");
@@ -35,7 +35,7 @@ public class Plane extends Vehicle implements Flyable {
     @Override
     public void startEngine() {
         if ( this.getFuel() >= 20 ) {
-            System.out.println("Plane's Engine starts");
+            System.out.println("Plane’s Engine starts");
             this.setFuel(this.getFuel() - 20);
         }
         else {
@@ -45,7 +45,7 @@ public class Plane extends Vehicle implements Flyable {
     
     @Override
     public void stopEngine() {
-        System.out.println("Plane's Engine stops");
+        System.out.println("Plane’s Engine stops");
     }
     
     @Override

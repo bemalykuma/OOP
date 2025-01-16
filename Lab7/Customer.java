@@ -46,7 +46,7 @@ public class Customer {
     @Override
     public String toString() {
         if ( acct == null ) {
-            return firstName + " " + lastName + " doesn't have account.";
+            return firstName + " " + lastName + " doesn’t have account.";
         }
         return "The " + firstName + " account has " + acct.getBalance() + " baht and " + acct.getCredit() + " credits.";
     }

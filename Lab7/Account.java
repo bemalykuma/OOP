@@ -41,7 +41,7 @@ public class Account {
         }
         else if ( (balance - a) > 0 ) {
             balance -= a;
-            System.out.println(a + " baht is withdraw from " + name + ".");
+            System.out.println(a + " baht is withdrawn from " + name + ".");
         }
         else if ( a < 0) {
             System.out.println("Input number must be a positive integer.");
