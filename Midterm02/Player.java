@@ -21,11 +21,11 @@ public class Player {
         return name;
     }
 
-    public int getHp() {
+    public int getHP() {
         return hp;
     }
 
-    public void setHp(int hp) {
+    public void setHP(int hp) {
         if ( hp < 0 ) {
             this.hp = 0;
         }
@@ -86,7 +86,7 @@ public class Player {
             Hufflepuff h = new Hufflepuff();
             h.attackSpell(this, target, spell);
         }
-        if (target.getHp() == 0) {
+        if (target.getHP() == 0) {
             System.out.println("[DEAD]: " + target.getName() + " was killed by " + name);
         }
         
