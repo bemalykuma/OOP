@@ -24,8 +24,13 @@ public class EventHandling_Cal implements ActionListener {
 
         }
         else if (ae.getSource().equals((cal).getBn_minus())) {
+            if ( "".equals(num) ) {
+                num += "-";
+                return;
+            }
             if ( !"".equals(num)) {
                 int n = Integer.parseInt(num);
+                
                 if ( total == 0 ) {
                     total += n;
                 }
