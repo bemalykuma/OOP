@@ -3,6 +3,14 @@ public class Account {
     public double balance;
     public String name;
 
+    public Account(int i, String string) {
+        //TODO Auto-generated constructor stub
+    }
+
+    public Account(double balance2, String name2) {
+        //TODO Auto-generated constructor stub
+    }
+
     public void deposit(double b) {
         if (b >= 0) {
             balance += b;
@@ -11,7 +19,7 @@ public class Account {
         }
     }
 
-    public double withdraw(double b) {
+    public void withdraw(double b) {
         if (b >= 0) {
             balance -= b;
         } else {
