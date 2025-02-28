@@ -13,7 +13,7 @@ import java.time.format.DateTimeFormatter;
 public class EventHandling_Chat implements ActionListener, WindowListener, KeyListener {
 
     private ChatDemo chat;
-    private String Massage = "";
+    private String Message = "";
 
     public EventHandling_Chat(ChatDemo chat) {
         this.chat = chat;
@@ -23,22 +23,22 @@ public class EventHandling_Chat implements ActionListener, WindowListener, KeyLi
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource().equals(chat.getSub())) {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-            Massage += dtf.format(LocalDateTime.now()) + ":" + this.chat.getTxtField().getText() + '\n';
-            this.chat.getTxtArea().setText(Massage);
+            Message += dtf.format(LocalDateTime.now()) + ":" + this.chat.getTxtField().getText() + '\n';
+            this.chat.getTxtArea().setText(Message);
             this.chat.getTxtField().setText("");
 
         }
         if (ae.getSource().equals(chat.getRe())) {
             this.chat.getTxtArea().setText("");
             this.chat.getTxtField().setText("");
-            Massage = "";
+            Message = "";
         }
     }
 
     @Override
     public void windowClosing(WindowEvent e) {
         try (FileOutputStream fout = new FileOutputStream("ChatDemo.dat"); DataOutputStream dout = new DataOutputStream(fout);) {
-            dout.writeUTF(Massage);
+            dout.writeUTF(Message);
         } catch (IOException ex) {
             System.out.println(ex.toString());
         }
@@ -71,8 +71,8 @@ public class EventHandling_Chat implements ActionListener, WindowListener, KeyLi
         if (f.exists()) {
             try (FileInputStream fin = new FileInputStream(f); DataInputStream din = new DataInputStream(fin);) {
                 String MassageString = din.readUTF();
-                Massage += MassageString;
-                this.chat.getTxtArea().setText(Massage);
+                Message += MassageString;
+                this.chat.getTxtArea().setText(Message);
 
             } catch (IOException ex) {
                 System.out.println(ex.toString());
@@ -84,8 +84,8 @@ public class EventHandling_Chat implements ActionListener, WindowListener, KeyLi
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER && !this.chat.getTxtField().getText().isEmpty()) {
             DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
-            Massage += dtf.format(LocalDateTime.now()) + ":" + this.chat.getTxtField().getText() + '\n';
-            this.chat.getTxtArea().setText(Massage);
+            Message += dtf.format(LocalDateTime.now()) + ":" + this.chat.getTxtField().getText() + '\n';
+            this.chat.getTxtArea().setText(Message);
             this.chat.getTxtField().setText("");
         }
     }
