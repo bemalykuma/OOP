@@ -19,6 +19,8 @@ public class PoringConstructor {
         fr.setLayout(new FlowLayout());
         fr.add(add);
         
+        fr.setLocationRelativeTo(null);
+        
         fr.pack();
         fr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         fr.setVisible(true);

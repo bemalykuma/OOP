@@ -4,7 +4,7 @@ import java.awt.*;
 import java.io.*;
 import javax.swing.*;
 
-public class MyClockPause extends JLabel implements Runnable {
+public class MyClock3 extends JLabel implements Runnable {
 
     private int sec;
     private int min;

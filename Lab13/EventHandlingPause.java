@@ -5,9 +5,9 @@ import java.awt.event.MouseListener;
 
 public class EventHandlingPause implements MouseListener{
 
-    private MyClockPause clock = new MyClockPause();
+    private MyClock3 clock = new MyClock3();
 
-    public EventHandlingPause(MyClockPause clock) {
+    public EventHandlingPause(MyClock3 clock) {
         this.clock = clock;
     }
     

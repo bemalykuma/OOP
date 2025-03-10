@@ -4,13 +4,13 @@ import javax.swing.JFrame;
 
 public class MyFramePause {
     private JFrame fr;
-    private MyClockPause clock;
+    private MyClock3 clock;
     private Thread t;
     private EventHandlingPause ev;
 
     public MyFramePause() {
         fr = new JFrame("My Clock");
-        clock = new MyClockPause();
+        clock = new MyClock3();
         t = new Thread(clock);
         ev = new EventHandlingPause(clock);
         
