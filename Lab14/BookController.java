@@ -36,7 +36,8 @@ public class BookController implements ActionListener, WindowListener {
                 view.getTxtNum().setText(index + "");
                 view.getTxtName().setText(array.getBook(index).getName());
                 view.getTxtPrice().setText("");
-                view.getTypeList().setSelectedIndex(0);
+                view.getTypeList().setSelectedItem("Default");
+
             } else {
                 String price = view.getTxtPrice().getText();
                 String name = view.getTxtName().getText();
@@ -54,33 +55,33 @@ public class BookController implements ActionListener, WindowListener {
                 view.getTxtNum().setText(index + "");
                 view.getTxtName().setText(array.getBook(index).getName());
                 view.getTxtPrice().setText(array.getBook(index).getPrice() + "");
-                view.getTypeList().setSelectedIndex(checkType(type));
+                view.getTypeList().setSelectedItem(type);
             }
 
         } else if (e.getSource().equals(view.getDelete())) {
             if (array.getNumOfBook() > 1) {
                 array.deleteBook(array.getBook(index));
-                JOptionPane.showMessageDialog(null, "Done it.", "Delete Command", JOptionPane.DEFAULT_OPTION);
                 index--;
                 if (index > 0) {
                     type = array.getBook(index).getType();
                     view.getTxtNum().setText(index + "");
                     view.getTxtName().setText(array.getBook(index).getName());
                     view.getTxtPrice().setText(array.getBook(index).getPrice() + "");
-                    view.getTypeList().setSelectedIndex(checkType(type));
+                    view.getTypeList().setSelectedItem(type);
                 } else if (index == 0 && array.getNumOfBook() > 1) {
                     index++;
                     type = array.getBook(index).getType();
                     view.getTxtNum().setText(index + "");
                     view.getTxtName().setText(array.getBook(index).getName());
                     view.getTxtPrice().setText(array.getBook(index).getPrice() + "");
-                    view.getTypeList().setSelectedIndex(checkType(type));
+                    view.getTypeList().setSelectedItem(type);
                 } else {
                     view.getTxtNum().setText(index + "");
                     view.getTxtName().setText("");
                     view.getTxtPrice().setText("");
-                    view.getTypeList().setSelectedIndex(0);
+                    view.getTypeList().setSelectedItem("Default");
                 }
+                JOptionPane.showMessageDialog(null, "Done it.", "Delete Command", JOptionPane.DEFAULT_OPTION);
             }
 
         } else if (e.getSource().equals(view.getLeft())) {
@@ -90,19 +91,19 @@ public class BookController implements ActionListener, WindowListener {
                 view.getTxtNum().setText(index + "");
                 view.getTxtName().setText(array.getBook(index).getName());
                 view.getTxtPrice().setText(array.getBook(index).getPrice() + "");
-                view.getTypeList().setSelectedIndex(checkType(type));
+                view.getTypeList().setSelectedItem(type);
                 if (index == 0 && array.getNumOfBook() > 0) {
                     type = array.getBook(1).getType();
                     view.getTxtNum().setText(1 + "");
                     view.getTxtName().setText(array.getBook(1).getName());
                     view.getTxtPrice().setText(array.getBook(1).getPrice() + "");
-                    view.getTypeList().setSelectedIndex(checkType(type));
+                    view.getTypeList().setSelectedItem(type);
                     index++;
                 } else if (index == 0) {
                     view.getTxtNum().setText(index + "");
                     view.getTxtName().setText("");
                     view.getTxtPrice().setText("");
-                    view.getTypeList().setSelectedIndex(0);
+                    view.getTypeList().setSelectedItem("Default");
                 }
             }
         } else if (e.getSource().equals(view.getRight())) {
@@ -112,21 +113,10 @@ public class BookController implements ActionListener, WindowListener {
                 view.getTxtNum().setText(index + "");
                 view.getTxtName().setText(array.getBook(index).getName());
                 view.getTxtPrice().setText(array.getBook(index).getPrice() + "");
-                view.getTypeList().setSelectedIndex(checkType(type));
+                view.getTypeList().setSelectedItem(type);
             }
         }
 
-    }
-
-    public int checkType(String type) {
-        if (type.equals("Computer")) {
-            return 1;
-        } else if (type.equals("Math&Sci")) {
-            return 2;
-        } else if (type.equals("Photo")) {
-            return 3;
-        }
-        return 0;
     }
 
     @Override

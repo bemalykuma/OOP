@@ -25,8 +25,11 @@ public class BookAdd {
         txtName = new JTextField();
         txtPrice = new JTextField();
 
-        String[] typeSTR = {"General", "Computer", "Math&Sci", "Photo"};
-        typeList = new JComboBox(typeSTR);
+        typeList = new JComboBox();
+        typeList.addItem("General");
+        typeList.addItem("Computer");
+        typeList.addItem("Math&Sci");
+        typeList.addItem("Photo");
 
         insert = new JButton("Insert");
 

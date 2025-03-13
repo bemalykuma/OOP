@@ -1,14 +1,7 @@
 package Lab14;
 
-import Exercise.Message;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.awt.event.*;
+import java.io.*;
 import javax.swing.JFileChooser;
 
 public class TextEditerController implements ActionListener{

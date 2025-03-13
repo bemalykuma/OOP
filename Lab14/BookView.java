@@ -28,9 +28,13 @@ public class BookView {
         txtPrice = new JTextField();
         txtNum = new JTextField("0");
 
-        String[] typeSTR = { "General", "Computer", "Math&Sci", "Photo" };
-        typeList = new JComboBox(typeSTR);
-
+        
+        typeList = new JComboBox();
+        typeList.addItem("General");
+        typeList.addItem("Computer");
+        typeList.addItem("Math&Sci");
+        typeList.addItem("Photo");
+        
         add = new JButton("Add");
         update = new JButton("Update");
         delete = new JButton("Delete");
